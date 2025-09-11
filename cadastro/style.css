@@ -27,6 +27,7 @@ header {
 
 .icone_home {
     height: 50px;
+    cursor: pointer;
 }
 
 .box_busca {
@@ -42,6 +43,7 @@ header {
     left: 9px;
     top: 9px;
     fill: #b0b0b0;
+    cursor: pointer;
 }
 
 .logo {
@@ -67,7 +69,7 @@ header {
     white-space: nowrap;
 }
 
-.conteiner_cadastro {
+.container_cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,12 +77,12 @@ header {
 
 
 
-.conteiner_cadastro h2 {
+.container_cadastro h2 {
     font-size: 48px;
     margin-top: 100px;
 }
 
-.conteiner_cadastro hr {
+.container_cadastro hr {
     width: 300px;
     height: 4px;
     border: none;
@@ -89,27 +91,127 @@ header {
     margin-bottom: 100px;
 }
 
-.box_cadastro{
+.box_cadastro {
     display: flex;
     justify-content: space-between;
     width: 90%;
     max-width: 1440px;
-    
+
 }
 
-.cadastro_coluna1{
-    background-color: aqua;
+.cadastro_coluna1 {
+    /* background-color: aqua; */
     width: 45%;
 }
 
-.cadastro_coluna2{
-    background-color: rgb(62, 156, 125);
+.cadastro_coluna2 {
+    /* background-color: rgb(62, 156, 125); */
     width: 45%;
 }
-.categoria_img{
+
+.categoria_img,
+.valor_peso {
     display: flex;
+    justify-content: space-between;
 }
 
-.valor_peso{
+.categoria,
+.img,
+.valor,
+.peso,
+.cadastro_coluna2,
+.bolos {
     display: flex;
+    flex-direction: column;
 }
+
+.categoria{
+    width: 70%;
+}
+
+
+.box_cadastro label {
+    font-size: 20px;
+}
+
+.box_cadastro input[type="text"],
+.box_cadastro textarea {
+    border-radius: 10px;
+    border: solid 1px #b3b3b3;
+    font-size: 18px;
+    padding: 0 5px;
+
+}
+
+.box_cadastro input[type="text"] {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.box_cadastro textarea {
+    resize: none;
+    height: 200px;
+
+}
+
+.container_cadastro input[type="button"] {
+    font-size: 26px;
+    margin: 50px 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFD188;
+    padding: 10px 200px;
+    box-shadow: 0 4px 4px 2px #00000025;
+    cursor: pointer;
+}
+
+.img{
+    width: 20%;
+}
+
+.img svg{
+    width: 30px;
+}
+
+input[type="file"]{
+    display: none;
+
+}
+
+.img div{
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: solid 1px #b3b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+.valor{
+    width: 50%;
+}
+
+.peso{
+    width: 40%;
+}
+
+
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+    .box_cadastro{
+        flex-direction: column;
+    }
+
+    .cadastro_coluna1,
+    .cadastro_coluna2{
+        width: 100%;
+    }
+   
+    .container_cadastro input[type="button"] {
+        padding: 10px 100%;
+    }
+}
+
