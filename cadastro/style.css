@@ -5,12 +5,18 @@
     font-family: "Bellota", system-ui;
 }
 
+:root {
+    --corPrincipal: #FFD188;
+    --arredondamento: 10px;
+    --sombreamento: 0 4px 4px 2px #00000025;
+}
+
 body {
     background-color: #fff6e8;
 }
 
 header {
-    background-color: #FFD188;
+    background-color: var(--corPrincipal);
     height: 100px;
 }
 
@@ -54,7 +60,7 @@ header {
 .campo_busca {
     width: 100%;
     height: 42px;
-    border-radius: 10px;
+    border-radius: var(--arredondamento);
     border: solid 1px #cccccc;
     padding-left: 2.5rem;
     font-size: 1rem;
@@ -69,6 +75,11 @@ header {
     white-space: nowrap;
 }
 
+
+
+
+/* CADASTRO */
+.container_lista,
 .container_cadastro {
     display: flex;
     flex-direction: column;
@@ -76,18 +87,19 @@ header {
 }
 
 
-
+.container_lista h2,
 .container_cadastro h2 {
     font-size: 48px;
     margin-top: 100px;
 }
 
+.container_lista hr,
 .container_cadastro hr {
     width: 300px;
     height: 4px;
     border: none;
     border-radius: 2px;
-    background-color: #FFD188;
+    background-color: var(--corPrincipal);
     margin-bottom: 100px;
 }
 
@@ -125,7 +137,7 @@ header {
     flex-direction: column;
 }
 
-.categoria{
+.categoria {
     width: 70%;
 }
 
@@ -136,7 +148,7 @@ header {
 
 .box_cadastro input[type="text"],
 .box_cadastro textarea {
-    border-radius: 10px;
+    border-radius: var(--arredondamento);
     border: solid 1px #b3b3b3;
     font-size: 18px;
     padding: 0 5px;
@@ -157,30 +169,30 @@ header {
 .container_cadastro input[type="button"] {
     font-size: 26px;
     margin: 50px 0;
-    border-radius: 10px;
+    border-radius: var(--arredondamento);
     border: none;
-    background-color: #FFD188;
+    background-color: var(--corPrincipal);
     padding: 10px 200px;
-    box-shadow: 0 4px 4px 2px #00000025;
+    box-shadow: var(--sombreamento);
     cursor: pointer;
 }
 
-.img{
+.img {
     width: 20%;
 }
 
-.img svg{
+.img svg {
     width: 30px;
 }
 
-input[type="file"]{
+input[type="file"] {
     display: none;
 
 }
 
-.img div{
+.img div {
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: var(--arredondamento);
     border: solid 1px #b3b3b3;
     display: flex;
     justify-content: center;
@@ -189,29 +201,112 @@ input[type="file"]{
     cursor: pointer;
 }
 
-.valor{
+.valor {
     width: 50%;
 }
 
-.peso{
+.peso {
     width: 40%;
 }
 
 
 
+/* LISTA */
+table {
+    /* background-color: aquamarine; */
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: solid 2px var();
+    padding: 0 3px 5px 3px;
+    font-size: 18px;
+}
+
+td {
+    padding: 10px 3px 5px 3px;
+    border-bottom: solid 2px #b3b3b350;
+
+}
+
+table svg {
+    width: 30px;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    background-color: #FFD188;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape p {
+    font-family: "Julius Sans One", sans-serif;
+    text-align: center;
+}
+
+
 /* MEDIA */
+@media screen and (max-width: 1000px) {
+    table {
+        width: 98%;
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .box_cadastro{
+    .box_cadastro {
         flex-direction: column;
     }
 
     .cadastro_coluna1,
-    .cadastro_coluna2{
+    .cadastro_coluna2 {
         width: 100%;
     }
-   
+
     .container_cadastro input[type="button"] {
-        padding: 10px 100%;
+        padding: 10px 100px;
+    }
+
+    /* LISTA */
+    table {
+        text-align: left;
+        max-width: 460px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        background-color: #ffffff;
+        border-radius: var(--arredondamento);
+        border: solid 1px var(--corPrincipal);
+        box-shadow: var(--sombreamento);
+    }
+
+    td {
+        border-bottom: none;
+    }
+
+    td::before {
+        content: attr(data-cell);
+        font-weight: 600;
+        border-bottom: solid 2px #b3b3b350;
+
+    }
+
+    td:last-child {
+        align-self: flex-end;
+
     }
 }
 
